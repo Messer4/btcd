@@ -47,6 +47,26 @@ type GetBlockVerboseResult struct {
 	NextHash      string        `json:"nextblockhash,omitempty"`
 }
 
+type GetOmniTxResult struct {
+	Txid		string			`json:"txid"` 				//"23127be6e623a5c6f51abf6860f4aeee345fa1e3022df5bb91164beae59e1b1f"
+	Fee         string			`json:"fee"` 				//  "fee": "0.00060000",
+	SendAddr	string			`json:"sendingaddress"`		//	"sendingaddress": "mmWGkD51YRtqAYRQvCSUT6B62a8MAiTKu7",
+	RefAddr		string 			`json:"referenceaddress"`	//	"referenceaddress": "mpMVGF3Fs7kSr4AuyE9DPzkoPgtGMdtw1K",
+	ismine		bool			`json:"ismine"`				//	"ismine": true,
+	version		int32			`json:"version"`			//	"version": 0,
+	TypeInt		int32			`json:"type_int"`			//	"type_int": 0,
+	Type		string			`json:"type"`				//	"type": "Simple Send",
+	propertyid	int32			`json:"propertyid"`			//	"propertyid": 2,
+	divisible	bool			`json:"divisible"`			//	"divisible": true,
+	amount		string			`json:"amount"`				//	"amount": "10.00000000",
+	valid		bool			`json:"valid"`				//	"valid": true,
+	blockhash	string			`json:"blockhash"`			//	"blockhash": "00000000058c505cdde4618620bfda55eb755666df2003c4adaaa29a9dd46834",
+	blocktime	int64			`json:"blocktime"`			//	"blocktime": 1518712406,
+	PosInBlock 	int32			`json:"positioninblock"`	//	"positioninblock": 86,
+	Height      int64	        `json:"block"`				//"block": 1282862,
+	Confirm		int32			`json:"confirmations"`		//	"confirmations": 858
+}
+
 // CreateMultiSigResult models the data returned from the createmultisig
 // command.
 type CreateMultiSigResult struct {
@@ -130,6 +150,15 @@ type GetBlockTemplateResultTx struct {
 type GetBlockTemplateResultAux struct {
 	Flags string `json:"flags"`
 }
+
+
+
+
+
+
+
+
+
 
 // GetBlockTemplateResult models the data returned from the getblocktemplate
 // command.

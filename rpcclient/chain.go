@@ -97,7 +97,7 @@ func (c *Client) GetBlockAsync(blockHash *chainhash.Hash) FutureGetBlockResult {
 		hash = blockHash.String()
 	}
 
-	cmd := btcjson.NewGetBlockCmd(hash, btcjson.Bool(false), nil)
+	cmd := btcjson.NewGetBlockCmd(hash, btcjson.Bool(false), nil)  //****
 	return c.sendCmd(cmd)
 }
 
@@ -145,6 +145,8 @@ func (c *Client) GetBlockVerboseAsync(blockHash *chainhash.Hash) FutureGetBlockV
 	return c.sendCmd(cmd)
 }
 
+
+
 // GetBlockVerbose returns a data structure from the server with information
 // about a block given its hash.
 //
@@ -153,6 +155,46 @@ func (c *Client) GetBlockVerboseAsync(blockHash *chainhash.Hash) FutureGetBlockV
 func (c *Client) GetBlockVerbose(blockHash *chainhash.Hash) (*btcjson.GetBlockVerboseResult, error) {
 	return c.GetBlockVerboseAsync(blockHash).Receive()
 }
+
+
+// Get Omni_Tx
+
+type FutureGetOmniTxResult chan *response
+
+func (r FutureGetOmniTxResult) Receive() (*btcjson.GetOmniTxResult, error) {
+	res, err := receiveFuture(r)
+	if err != nil {
+		return nil, err
+	}
+
+	// Unmarshal the raw result into a BlockResult.
+	var blockResult btcjson.GetOmniTxResult
+	err = json.Unmarshal(res, &blockResult)
+	if err != nil {
+		return nil, err
+	}
+	return &blockResult, nil
+}
+
+
+	func (c *Client) GetOmniTx(txhash *chainhash.Hash) (*btcjson.GetOmniTxResult, error) {
+		return c.GetOmniTxAsync(txhash).Receive()
+}
+
+func (c *Client) GetOmniTxAsync(blockHash *chainhash.Hash) FutureGetOmniTxResult {
+	hash := ""
+	if blockHash != nil {
+		hash = blockHash.String()
+	}
+	cmd := btcjson.NewGetOmniTxCmd(hash)
+	return c.sendCmd(cmd)
+}
+
+
+
+
+
+
 
 // GetBlockVerboseTxAsync returns an instance of a type that can be used to get
 // the result of the RPC at some future time by invoking the Receive function on
@@ -469,6 +511,9 @@ func (c *Client) GetMempoolEntry(txHash string) (*btcjson.GetMempoolEntryResult,
 // GetRawMempoolAsync RPC invocation (or an applicable error).
 type FutureGetRawMempoolResult chan *response
 
+
+
+
 // Receive waits for the response promised by the future and returns the hashes
 // of all transactions in the memory pool.
 func (r FutureGetRawMempoolResult) Receive() ([]*chainhash.Hash, error) {
@@ -507,10 +552,56 @@ func (c *Client) GetRawMempoolAsync() FutureGetRawMempoolResult {
 	return c.sendCmd(cmd)
 }
 
+
+//Add by Mikle
+// GetOmniTxs returns the hashes of all transactions in the block
+
+
+type FutureGetOmniTxsFromBlockResult chan *response
+
+func (r FutureGetOmniTxsFromBlockResult) Receive() ([]*chainhash.Hash, error) {
+	res, err := receiveFuture(r)
+	if err != nil {
+		return nil, err
+	}
+
+	// Unmarshal the result as an array of strings.
+	var txHashStrs []string
+	err = json.Unmarshal(res, &txHashStrs)
+	if err != nil {
+		return nil, err
+	}
+
+	// Create a slice of ShaHash arrays from the string slice.
+	txHashes := make([]*chainhash.Hash, 0, len(txHashStrs))
+	for _, hashStr := range txHashStrs {
+		txHash, err := chainhash.NewHashFromStr(hashStr)
+		if err != nil {
+			return nil, err
+		}
+		txHashes = append(txHashes, txHash)
+	}
+
+	return txHashes, nil
+}
+
+
+func (c *Client) GetOmniTxsFromBlock(blockHeight int64) ([]*chainhash.Hash, error) {
+	return c.GetOmniTxsFromBlockAsync(blockHeight).Receive()
+}
+
+func (c *Client) GetOmniTxsFromBlockAsync(blockHeight int64) FutureGetOmniTxsFromBlockResult {
+	cmd := btcjson.NewGetOmniTxsFromBlockCmd(blockHeight)
+	return c.sendCmd(cmd)
+}
+
+
+
 // GetRawMempool returns the hashes of all transactions in the memory pool.
 //
 // See GetRawMempoolVerbose to retrieve data structures with information about
 // the transactions instead.
+
 func (c *Client) GetRawMempool() ([]*chainhash.Hash, error) {
 	return c.GetRawMempoolAsync().Receive()
 }

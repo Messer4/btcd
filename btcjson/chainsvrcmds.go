@@ -145,6 +145,23 @@ func NewGetBlockCmd(hash string, verbose, verboseTx *bool) *GetBlockCmd {
 	}
 }
 
+
+
+// ADDED
+type GetOmniTxCmd struct {
+	Hash      string
+}
+
+
+func NewGetOmniTxCmd(hash string) *GetOmniTxCmd {
+	return &GetOmniTxCmd{
+		Hash:      hash,
+	}
+}
+//
+
+
+
 // GetBlockChainInfoCmd defines the getblockchaininfo JSON-RPC command.
 type GetBlockChainInfoCmd struct{}
 
@@ -175,6 +192,23 @@ func NewGetBlockHashCmd(index int64) *GetBlockHashCmd {
 		Index: index,
 	}
 }
+
+//
+
+type GetOmniTxsFromBlockCmd struct {
+	Index int64
+}
+
+//
+
+func NewGetOmniTxsFromBlockCmd(index int64) *GetOmniTxsFromBlockCmd {
+	return &GetOmniTxsFromBlockCmd{
+		Index: index,
+	}
+}
+
+
+//
 
 // GetBlockHeaderCmd defines the getblockheader JSON-RPC command.
 type GetBlockHeaderCmd struct {
@@ -790,4 +824,6 @@ func init() {
 	MustRegisterCmd("verifychain", (*VerifyChainCmd)(nil), flags)
 	MustRegisterCmd("verifymessage", (*VerifyMessageCmd)(nil), flags)
 	MustRegisterCmd("verifytxoutproof", (*VerifyTxOutProofCmd)(nil), flags)
+	MustRegisterCmd("omni_listblocktransactions", (*GetOmniTxsFromBlockCmd)(nil), flags)
+	MustRegisterCmd("omni_gettransaction", (*GetOmniTxCmd)(nil), flags)
 }
