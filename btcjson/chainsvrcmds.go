@@ -196,12 +196,12 @@ func NewGetBlockHashCmd(index int64) *GetBlockHashCmd {
 //
 
 type GetOmniTxsFromBlockCmd struct {
-	Index int64
+	Index uint64
 }
 
 //
 
-func NewGetOmniTxsFromBlockCmd(index int64) *GetOmniTxsFromBlockCmd {
+func NewGetOmniTxsFromBlockCmd(index uint64) *GetOmniTxsFromBlockCmd {
 	return &GetOmniTxsFromBlockCmd{
 		Index: index,
 	}

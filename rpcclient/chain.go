@@ -586,11 +586,11 @@ func (r FutureGetOmniTxsFromBlockResult) Receive() ([]*chainhash.Hash, error) {
 }
 
 
-func (c *Client) GetOmniTxsFromBlock(blockHeight int64) ([]*chainhash.Hash, error) {
+func (c *Client) GetOmniTxsFromBlock(blockHeight uint64) ([]*chainhash.Hash, error) {
 	return c.GetOmniTxsFromBlockAsync(blockHeight).Receive()
 }
 
-func (c *Client) GetOmniTxsFromBlockAsync(blockHeight int64) FutureGetOmniTxsFromBlockResult {
+func (c *Client) GetOmniTxsFromBlockAsync(blockHeight uint64) FutureGetOmniTxsFromBlockResult {
 	cmd := btcjson.NewGetOmniTxsFromBlockCmd(blockHeight)
 	return c.sendCmd(cmd)
 }
