@@ -10,9 +10,9 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/Messer4/btcd/btcjson"
-	"github.com/Messer4/btcd/chaincfg/chainhash"
-	"github.com/Messer4/btcd/wire"
+	"github.com/btcsuite/btcd/btcjson"
+	"github.com/btcsuite/btcd/chaincfg/chainhash"
+	"github.com/btcsuite/btcd/wire"
 )
 
 // FutureGetBestBlockHashResult is a future promise to deliver the result of a
@@ -158,6 +158,7 @@ func (c *Client) GetBlockVerbose(blockHash *chainhash.Hash) (*btcjson.GetBlockVe
 
 
 // Get Omni_Tx
+/*
 
 type FutureGetOmniTxResult chan *response
 
@@ -189,6 +190,7 @@ func (c *Client) GetOmniTxAsync(blockHash *chainhash.Hash) FutureGetOmniTxResult
 	cmd := btcjson.NewGetOmniTxCmd(hash)
 	return c.sendCmd(cmd)
 }
+*/
 
 
 
@@ -557,6 +559,7 @@ func (c *Client) GetRawMempoolAsync() FutureGetRawMempoolResult {
 // GetOmniTxs returns the hashes of all transactions in the block
 
 
+/*
 type FutureGetOmniTxsFromBlockResult chan *response
 
 func (r FutureGetOmniTxsFromBlockResult) Receive() ([]*chainhash.Hash, error) {
@@ -594,6 +597,7 @@ func (c *Client) GetOmniTxsFromBlockAsync(blockHeight uint64) FutureGetOmniTxsFr
 	cmd := btcjson.NewGetOmniTxsFromBlockCmd(blockHeight)
 	return c.sendCmd(cmd)
 }
+*/
 
 
 

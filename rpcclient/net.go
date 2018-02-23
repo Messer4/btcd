@@ -7,7 +7,7 @@ package rpcclient
 import (
 	"encoding/json"
 
-	"github.com/Messer4/btcd/btcjson"
+	"github.com/btcsuite/btcd/btcjson"
 )
 
 // AddNodeCommand enumerates the available commands that the AddNode function

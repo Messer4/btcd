@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Messer4/btcd/chaincfg/chainhash"
-	"github.com/Messer4/btcd/wire"
+	"github.com/btcsuite/btcd/chaincfg/chainhash"
+	"github.com/btcsuite/btcd/wire"
 )
 
 // These variables are the chain proof-of-work limit parameters for each default

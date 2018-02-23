@@ -56,7 +56,7 @@ type GetOmniTxResult struct {
 	Version		int32			`json:"version"`			//	"version": 0,
 	TypeInt		int32			`json:"type_int"`			//	"type_int": 0,
 	Type		string			`json:"type"`				//	"type": "Simple Send",
-	PropertyId	int32			`json:"propertyid"`			//	"propertyid": 2,
+	PropertyId	int64			`json:"propertyid"`			//	"propertyid": 2,
 	Divisible	bool			`json:"divisible"`			//	"divisible": true,
 	Amount		string			`json:"amount"`				//	"amount": "10.00000000",
 	Valid		bool			`json:"valid"`				//	"valid": true,
