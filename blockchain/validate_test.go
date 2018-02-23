@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/wire"
+	"github.com/Messer4/btcd/chaincfg"
+	"github.com/Messer4/btcd/chaincfg/chainhash"
+	"github.com/Messer4/btcd/wire"
 	"github.com/btcsuite/btcutil"
 )
 

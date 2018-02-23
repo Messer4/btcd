@@ -12,14 +12,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/btcsuite/btcd/blockchain"
-	"github.com/btcsuite/btcd/blockchain/indexers"
-	"github.com/btcsuite/btcd/btcjson"
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/mining"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
+	"github.com/Messer4/btcd/blockchain"
+	"github.com/Messer4/btcd/blockchain/indexers"
+	"github.com/Messer4/btcd/btcjson"
+	"github.com/Messer4/btcd/chaincfg"
+	"github.com/Messer4/btcd/chaincfg/chainhash"
+	"github.com/Messer4/btcd/mining"
+	"github.com/Messer4/btcd/txscript"
+	"github.com/Messer4/btcd/wire"
 	"github.com/btcsuite/btcutil"
 )
 

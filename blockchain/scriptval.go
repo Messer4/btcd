@@ -10,8 +10,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
+	"github.com/Messer4/btcd/txscript"
+	"github.com/Messer4/btcd/wire"
 	"github.com/btcsuite/btcutil"
 )
 
