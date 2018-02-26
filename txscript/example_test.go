@@ -13,7 +13,7 @@ import (
 	"github.com/Messer4/btcd/chaincfg/chainhash"
 	"github.com/Messer4/btcd/txscript"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 // This example demonstrates creating a script which pays to a bitcoin address.
