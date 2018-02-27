@@ -7,7 +7,7 @@ package mining
 import (
 	"github.com/Messer4/btcd/blockchain"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 const (

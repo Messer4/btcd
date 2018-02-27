@@ -15,7 +15,7 @@ import (
 	"github.com/Messer4/btcd/chaincfg"
 	"github.com/Messer4/btcd/database"
 	"github.com/Messer4/btcd/database/ffldb"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 // dbType is the database type name for this driver.

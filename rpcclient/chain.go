@@ -15,6 +15,17 @@ import (
 	"github.com/Messer4/btcd/wire"
 )
 
+/*type OMNIRPCnterface interface {
+
+
+	GetBlockCount() (int64, error)
+	GetBlock(blockHash *chainhash.Hash) (*wire.MsgBlock, error)
+	GetOmniTx(txhash *chainhash.Hash) (*btcjson.GetOmniTxResult, error)
+	GetOmniTxsFromBlock(blockHeight uint64) ([]*chainhash.Hash, error)
+	GetBlockHash(blockHeight int64) (*chainhash.Hash, error)
+
+}*/
+
 // FutureGetBestBlockHashResult is a future promise to deliver the result of a
 // GetBestBlockAsync RPC invocation (or an applicable error).
 type FutureGetBestBlockHashResult chan *response

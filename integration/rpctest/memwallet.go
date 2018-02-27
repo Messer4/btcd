@@ -17,8 +17,8 @@ import (
 	"github.com/Messer4/btcd/rpcclient"
 	"github.com/Messer4/btcd/txscript"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcutil/hdkeychain"
+	"github.com/Messer4/btcutil"
+	"github.com/Messer4/btcutil/hdkeychain"
 )
 
 var (

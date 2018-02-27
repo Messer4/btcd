@@ -20,7 +20,7 @@ import (
 	"github.com/Messer4/btcd/chaincfg"
 	"github.com/Messer4/btcd/database"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 	"github.com/btcsuite/goleveldb/leveldb"
 	ldberrors "github.com/btcsuite/goleveldb/leveldb/errors"
 )

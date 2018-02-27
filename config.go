@@ -27,7 +27,7 @@ import (
 	"github.com/Messer4/btcd/database"
 	_ "github.com/Messer4/btcd/database/ffldb"
 	"github.com/Messer4/btcd/mempool"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 	"github.com/btcsuite/go-socks/socks"
 	flags "github.com/jessevdk/go-flags"
 )

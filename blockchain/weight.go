@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	"github.com/Messer4/btcd/txscript"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 const (

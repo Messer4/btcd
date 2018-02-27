@@ -13,7 +13,7 @@ import (
 	"github.com/Messer4/btcd/database"
 	_ "github.com/Messer4/btcd/database/ffldb"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 	flags "github.com/jessevdk/go-flags"
 )
 

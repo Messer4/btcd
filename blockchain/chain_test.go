@@ -12,7 +12,7 @@ import (
 	"github.com/Messer4/btcd/chaincfg"
 	"github.com/Messer4/btcd/chaincfg/chainhash"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 // TestHaveBlock tests the HaveBlock API to ensure proper functionality.

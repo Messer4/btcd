@@ -13,7 +13,7 @@ import (
 	"github.com/Messer4/btcd/netsync"
 	"github.com/Messer4/btcd/peer"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 // rpcPeer provides a peer for use with the RPC server and implements the

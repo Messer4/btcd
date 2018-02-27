@@ -15,7 +15,7 @@ import (
 	"time"
 
 	rpc "github.com/Messer4/btcd/rpcclient"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 // nodeConfig contains all the args, and data required to launch a btcd process

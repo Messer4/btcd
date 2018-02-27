@@ -18,7 +18,7 @@ import (
 	"github.com/Messer4/btcd/mempool"
 	peerpkg "github.com/Messer4/btcd/peer"
 	"github.com/Messer4/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/Messer4/btcutil"
 )
 
 const (
